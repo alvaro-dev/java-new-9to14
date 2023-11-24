@@ -65,5 +65,29 @@ public class Main {
             case "João"  -> System.out.println("Acertou: " + name);
             default      -> System.out.println("nenhum nome encontrado: " + name);
         }
-   }
-}
+
+        //Novidade Java 9 - JShell
+        /*
+        Exemplo comandos utilizados no JShell via terminal iniciando com o comando JShell:
+        jshell> System.out.println("Hello world")
+        jshell> String nome = "João";
+        jshell> nome.toUpperCase();
+        jshell> "Renata"
+        jshell> $4.toLowerCase();
+        jshell> /set feedback verbose
+        jshell> int idade;
+        jshell> /set feedback silent 
+        jshell> int numero;
+        jshell> /set feedback normal
+        jshell> public void somar(int a, int b) {
+            ...> System.out.println(a + b);
+            ...> }
+        jshell> somar(1, 1);
+        jshell> /edit
+                class Principal{
+                public void somar(int a, int b) {
+                    System.out.println(a + b);
+                    }
+                }
+        jshell> /drop 8
+        */

@@ -90,4 +90,7 @@ public class Main {
                     }
                 }
         jshell> /drop 8
+
+        O JShell permite salvar arquivos com extensão:
+        /save *(nome do arquivo).(extensão)*
         */

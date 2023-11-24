@@ -23,5 +23,28 @@ public class Main {
         var cpfPorNomes = new HashMap<String, String>();
         cpfPorNomes.put("Pedro", "01234587963");
         System.out.println(cpfPorNomes);
+
+        //Novidade Java 13 - Text Blocks
+        String texto = "\"Lorem ipsum dolor sit amet, consectetur adipiscing \n"
+        + "elit, sed do eiusmod tempor incididunt ut labore et dolore magna \n"
+        + "aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco \n"
+        + "laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor \n"
+        + "in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla \n"
+        + "pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa \n"
+        + "qui officia deserunt mollit anim id est laborum.\"";
+        System.out.println(texto);
+
+        String textoFormatado = """
+            Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+            qui officia deserunt mollit anim id est laborum.
+        """;
+        System.out.println(textoFormatado);
+
+        
    }
 }

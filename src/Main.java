@@ -1,3 +1,4 @@
+import java.lang.runtime.SwitchBootstraps;
 import java.util.*;
 
 public class Main {
@@ -45,6 +46,24 @@ public class Main {
         """;
         System.out.println(textoFormatado);
 
+        //Novidade Java 14 - Switch Expressions
+        String name = "João";
+        switch (name) {
+            case "Outro":
+                System.out.println("Não Acertou: " + name);
+                break;
+            case "João":
+                System.out.println("Acertou: " + name);
+                break;
+            default:
+                System.out.println("nenhum nome encontrado: " + name);
+                break;
+        }
         
+        switch (name) {
+            case "Outro" -> System.out.println("Não Acertou: " + name);
+            case "João"  -> System.out.println("Acertou: " + name);
+            default      -> System.out.println("nenhum nome encontrado: " + name);
+        }
    }
 }

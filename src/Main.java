@@ -1,9 +1,23 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.lang.runtime.SwitchBootstraps;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.*;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.net.http.HttpResponse.BodyHandler;
+import java.net.http.HttpResponse.BodyHandlers;
+import java.net.URI;
+
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, URISyntaxException, InterruptedException {
         //Novidade do Java 9 - Factory Method para Collection
         /*
         ArrayList<String> nomes = new ArrayList<>();
@@ -94,5 +108,23 @@ public class Main {
         O JShell permite salvar arquivos com extensão:
         /save *(nome do arquivo).(extensão)*
         */
+        
+        //Novidade Java 11 - HTTP/2 Client API
+        /*
+        URL url = new URL("https://www.google.com/");
+        URLConnection uc = url.openConnection();
+        BufferedReader br = new BufferedReader( new InputStreamReader(uc.getInputStream()));
+        String line = "";
+        while (br.readLine() != null) {
+            line = line.concat(br.readLine()).concat(System.lineSeparator());
+        }
+        System.out.println(line);
+        */
+        HttpClient httpClient = HttpClient.newHttpClient();
+        HttpRequest httpRequest = HttpRequest.newBuilder( new URI("https://www.google.com.br")).GET().build();
+        HttpResponse<String> resp = httpClient.send(httpRequest, BodyHandlers.ofString()); //send(httpRequest, BodyHandlers.ofString());
+        System.out.println(resp.body());
+        System.out.println(resp.statusCode());
+        System.out.println(resp.version());
     }
 }

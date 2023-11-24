@@ -18,5 +18,10 @@ public class Main {
         System.out.println("Set: " + nomes);
         Map<String, String> dicionarios = Map.of("nome","First Name");
         System.out.println("Map: " + dicionarios);
+
+        //Novidade Java 10 - Inferência de Variável
+        var cpfPorNomes = new HashMap<String, String>();
+        cpfPorNomes.put("Pedro", "01234587963");
+        System.out.println(cpfPorNomes);
    }
 }
